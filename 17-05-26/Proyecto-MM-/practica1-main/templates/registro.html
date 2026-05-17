@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block contenido %}
+
+
+<div class="container justify-content-center align-items-center vh-100">
+    <div class="card shadow p-4" style="width: 400px;">
+        <div class="text-center">
+            <h1 class="mb-4"><strong>Registrate</strong></h1>
+            <img src="static/OIP.webp" class="rounded" alt="imagen de logotipo de persona">
+        </div>
+        {% if error %}
+        <p style="color:red;">{{ error }}</p>
+        {% endif %}
+        <form method="POST" action="/registror">
+            <input type="text" name="nombre" class="form-control mb-3" placeholder="Nombre" required>
+
+            <input type="text" name="apellido" class="form-control mb-3" placeholder="Apellido" required>
+
+            <input type="email" name="email" class="form-control mb-3" placeholder="Correo" required>
+
+            <input type="password" name="password" class="form-control mb-3" placeholder="Contraseña">
+
+            <input type="password" name="confirm_password" class="form-control mb-3" placeholder="Confirma la contraseña">
+
+            <button type="submit" class="btn btn-dark w-100">Registrate</button>
+            <p>
+                Ya tienes una cuenta?
+                <a href="/login" class="btn btn-success w-100">Inicia sesión</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+
+{% endblock %} 

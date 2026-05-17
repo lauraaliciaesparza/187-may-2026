@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block contenido %}
+
+
+<div class="container  justify-content-center align-items-center ">
+    <div class="card shadow p-4" style="width: 400px;">
+        <div class="text-center">
+            <h1 class="mb-4"><strong>Inicia sesion</strong></h1>
+            <img src="static/OIP.webp" class="rounded" alt="imagen de logotipo de persona">
+        </div>
+        {% if error %}
+        <p style="color:red;">{{ error }}</p>
+        {% endif %}
+        <form method="POST" action="/login">
+            <input type="email" name="email" class="form-control mb-3" placeholder="Correo" required>
+
+            <input type="password" name="password" class="form-control mb-3" placeholder="Contraseña">
+            
+            <button type="submit" class="btn btn-primary w-100">Iniciar sesion</button>
+
+            <a href="forgot-pasword.php" class="d-block text-center mt-2">HE olvidado mi conraseeña</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %} 

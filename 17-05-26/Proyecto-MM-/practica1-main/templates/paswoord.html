@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block contenido %}
+
+    <body>
+<div class="container mt-5">
+<div class="main-container">
+<form id="forgot-password-form" method="POST" class="form">
+<h1>Recuperar Contraseña</h1>
+<hr>
+
+<!-- Manejo de Flash Messages (Errores) -- >
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-danger">{{ message }}</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="form-group">
+<label>Introduce el correo asociado a tu cuenta</label>
+<input type="email" name="email" class="form-control formcontrol-email" placeholder="Correo electrónico" required>
+</div>
+<placeholder="Correo electrónico" requiredautofocus>
+</div>
+<button type="submit" class="btn btn-primary btn-lg btnblock">Enviar</button>
+ </form>
+</div>
+</div>
+</body>
+<!-- PASWOOR olvido la contraseña-->
+
+{% endblock %} 
